@@ -1,4 +1,4 @@
-﻿import asyncio
+import asyncio
 import logging
 from datetime import datetime
 from sqlalchemy import select
@@ -32,7 +32,8 @@ async def on_new_news(channel_username, message_id, text, category, raw_text, me
     print(f"\nðŸ“° Yangi post: @{channel_username}")
     print(f"   Kategoriya: {category}")
     print(f"   Text preview: {extract_preview(text, 100)}")
-    print(f"   Media: {'âœ… ' + media['type'] if media else 'âŒ Yo\'q'}")
+    media_status = f"✅ {media['type']}" if media else "❌ Yo'q"
+    print(f"   Media: {media_status}")
     
     # Til tekshiruvi - faqat o'zbek tilida
     if not is_uzbek(raw_text):
