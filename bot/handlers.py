@@ -1604,16 +1604,19 @@ async def activate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user.is_subscribed = True
         await session.commit()
         
+        username_display = user.username or "yo'q"
+        end_date_formatted = user.subscription_end.strftime('%d.%m.%Y %H:%M')
+        
         await update.message.reply_text(
             f"✅ **OBUNA FAOLLASHTIRILDI**\n\n"
             f"━━━━━━━━━━━━━━━━━━━━\n\n"
-            f"👤 User: {user.username or 'yo\'q'}\n"
+            f"👤 User: {username_display}\n"
             f"🆔 ID: `{user_telegram_id}`\n\n"
             f"{plan_info['emoji']} **Plan:** {plan_info['name']}\n"
             f"💰 **Narx:** {plan_info['price']:,} so'm\n"
             f"⏰ **Muddat:** {plan_info['duration_days']} kun\n\n"
             f"📅 **Tugash sanasi:**\n"
-            f"{user.subscription_end.strftime('%d.%m.%Y %H:%M')}",
+            f"{end_date_formatted}",
             parse_mode='Markdown'
         )
         

@@ -59,7 +59,8 @@ class ChannelListener:
             # Debug log
             print(f"\n📨 Yangi xabar: @{channel.username}")
             print(f"   Text: {raw_text[:100]}...")
-            print(f"   Media: {media['type'] if media else 'Yo\'q'}")
+            media_status = media['type'] if media else "Yo'q"
+            print(f"   Media: {media_status}")
             print(f"   Kategoriya: {category}")
             
             # Callback ga yuborish
