@@ -402,6 +402,164 @@ TRANSLATIONS = {
         'ru': '❌ У вас нет доступа к этой функции.',
         'en': '❌ You don\'t have access to this function.',
     },
+    
+    # ========== PAYMENT & SUBSCRIPTION ==========
+    'price': {
+        'uz': 'Narx',
+        'uz_cyrl': 'Нарх',
+        'ru': 'Цена',
+        'en': 'Price',
+    },
+    'sum_month': {
+        'uz': 'so\'m/oy',
+        'uz_cyrl': 'сўм/ой',
+        'ru': 'сум/мес',
+        'en': 'sum/month',
+    },
+    'sum': {
+        'uz': 'so\'m',
+        'uz_cyrl': 'сўм',
+        'ru': 'сум',
+        'en': 'sum',
+    },
+    'duration': {
+        'uz': 'Muddat',
+        'uz_cyrl': 'Муддат',
+        'ru': 'Срок',
+        'en': 'Duration',
+    },
+    'creating_payment': {
+        'uz': '⏳ To\'lov yaratilmoqda...',
+        'uz_cyrl': '⏳ Тўлов яратилмоқда...',
+        'ru': '⏳ Создание платежа...',
+        'en': '⏳ Creating payment...',
+    },
+    'payment_created': {
+        'uz': 'TO\'LOV YARATILDI',
+        'uz_cyrl': 'ТЎЛОВ ЯРАТИЛДИ',
+        'ru': 'ПЛАТЕЖ СОЗДАН',
+        'en': 'PAYMENT CREATED',
+    },
+    'plan': {
+        'uz': 'Tarif',
+        'uz_cyrl': 'Тариф',
+        'ru': 'Тариф',
+        'en': 'Plan',
+    },
+    'amount': {
+        'uz': 'Summa',
+        'uz_cyrl': 'Сумма',
+        'ru': 'Сумма',
+        'en': 'Amount',
+    },
+    'transaction_id': {
+        'uz': 'Tranzaksiya ID',
+        'uz_cyrl': 'Транзакция ID',
+        'ru': 'ID транзакции',
+        'en': 'Transaction ID',
+    },
+    'click_to_pay': {
+        'uz': 'To\'lovni amalga oshirish uchun tugmani bosing:',
+        'uz_cyrl': 'Тўловни амалга ошириш учун тугмани босинг:',
+        'ru': 'Нажмите кнопку для оплаты:',
+        'en': 'Click the button to pay:',
+    },
+    'pay_now': {
+        'uz': 'To\'lash',
+        'uz_cyrl': 'Тўлаш',
+        'ru': 'Оплатить',
+        'en': 'Pay Now',
+    },
+    'check_payment': {
+        'uz': 'Tekshirish',
+        'uz_cyrl': 'Текшириш',
+        'ru': 'Проверить',
+        'en': 'Check Payment',
+    },
+    'checking_payment': {
+        'uz': 'Tekshirilmoqda...',
+        'uz_cyrl': 'Текширилмоқда...',
+        'ru': 'Проверяется...',
+        'en': 'Checking...',
+    },
+    'payment_success': {
+        'uz': 'TO\'LOV MUVAFFAQIYATLI',
+        'uz_cyrl': 'ТЎЛОВ МУВАФФАҚИЯТЛИ',
+        'ru': 'ОПЛАТА УСПЕШНА',
+        'en': 'PAYMENT SUCCESSFUL',
+    },
+    'valid_until': {
+        'uz': 'Amal qilish muddati',
+        'uz_cyrl': 'Амал қилиш муддати',
+        'ru': 'Действует до',
+        'en': 'Valid until',
+    },
+    'subscription_activated': {
+        'uz': 'Obuna faollashtirildi! Endi barcha imkoniyatlardan foydalaning.',
+        'uz_cyrl': 'Обуна фаоллаштирилди! Энди барча имкониятлардан фойдаланинг.',
+        'ru': 'Подписка активирована! Теперь используйте все возможности.',
+        'en': 'Subscription activated! Now use all features.',
+    },
+    'payment_pending': {
+        'uz': 'To\'lov kutilmoqda',
+        'uz_cyrl': 'Тўлов кутилмоқда',
+        'ru': 'Ожидание оплаты',
+        'en': 'Payment pending',
+    },
+    'complete_payment': {
+        'uz': 'Iltimos, to\'lovni yakunlang.',
+        'uz_cyrl': 'Илтимос, тўловни якунланг.',
+        'ru': 'Пожалуйста, завершите оплату.',
+        'en': 'Please complete the payment.',
+    },
+    'payment_failed': {
+        'uz': 'To\'lov amalga oshmadi',
+        'uz_cyrl': 'Тўлов амалга ошмади',
+        'ru': 'Оплата не прошла',
+        'en': 'Payment failed',
+    },
+    'payment_cancelled': {
+        'uz': 'To\'lov bekor qilindi',
+        'uz_cyrl': 'Тўлов бекор қилинди',
+        'ru': 'Оплата отменена',
+        'en': 'Payment cancelled',
+    },
+    'payment_unknown': {
+        'uz': 'Noma\'lum status',
+        'uz_cyrl': 'Номаълум статус',
+        'ru': 'Неизвестный статус',
+        'en': 'Unknown status',
+    },
+    'payment_error': {
+        'uz': 'To\'lov yaratishda xato',
+        'uz_cyrl': 'Тўлов яратишда хато',
+        'ru': 'Ошибка создания платежа',
+        'en': 'Payment creation error',
+    },
+    'try_again_later': {
+        'uz': 'Keyinroq qayta urinib ko\'ring.',
+        'uz_cyrl': 'Кейинроқ қайта уриниб кўринг.',
+        'ru': 'Попробуйте позже.',
+        'en': 'Please try again later.',
+    },
+    'try_again': {
+        'uz': 'Qayta urinib ko\'ring.',
+        'uz_cyrl': 'Қайта уриниб кўринг.',
+        'ru': 'Попробуйте снова.',
+        'en': 'Try again.',
+    },
+    'payment_not_found': {
+        'uz': 'To\'lov topilmadi',
+        'uz_cyrl': 'Тўлов топилмади',
+        'ru': 'Платеж не найден',
+        'en': 'Payment not found',
+    },
+    'check_error': {
+        'uz': 'Tekshirishda xato',
+        'uz_cyrl': 'Текширишда хато',
+        'ru': 'Ошибка проверки',
+        'en': 'Check error',
+    },
 }
 
 
@@ -521,3 +679,4 @@ def format_date(date, lang: str) -> str:
     # Implement locale-specific date formatting
     # For now, simple ISO format
     return date.strftime('%Y-%m-%d')
+

@@ -140,6 +140,9 @@ CATEGORIES = {
 # OpenAI API (agar ishlatmoqchi bo'lsangiz)
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
 
+# TSPay to'lov tizimi
+TSPAY_API_KEY = os.getenv('TSPAY_API_KEY')  # API key ishlatamiz
+
 # Trial davri (kunlarda)
 TRIAL_DAYS = 7
 

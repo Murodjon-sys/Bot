@@ -53,3 +53,28 @@ class News(Base):
     media_file_id = Column(String, nullable=True)  # Telegram file_id (kichik media uchun)
     channel_username = Column(String, nullable=True)  # Forward uchun kanal username
     channel_message_id = Column(Integer, nullable=True)  # Forward uchun message ID
+
+
+class Payment(Base):
+    __tablename__ = 'payments'
+    
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    
+    # To'lov ma'lumotlari
+    amount = Column(Integer, nullable=False)  # Summa (so'm)
+    plan = Column(String, nullable=False)  # 'basic' | 'premium'
+    
+    # TSPay ma'lumotlari
+    transaction_id = Column(String, unique=True, nullable=False)  # TSPay cheque_id
+    payment_url = Column(String, nullable=True)  # To'lov havolasi
+    
+    # Status
+    status = Column(String, default='pending')  # 'pending' | 'success' | 'failed' | 'cancelled'
+    
+    # Vaqt
+    created_at = Column(DateTime, default=datetime.utcnow)
+    paid_at = Column(DateTime, nullable=True)  # To'lov amalga oshgan vaqt
+    
+    # Relationship
+    user = relationship('User', backref='payments')

@@ -1469,77 +1469,9 @@ async def handle_keyboard_buttons(update: Update, context: ContextTypes.DEFAULT_
     # Tariflar tugmasi (ko'p tillilik bilan)
     from utils.i18n import t
     if text == t('btn_plans', lang):
-        # Tariflar ro'yxatini ko'rsatish
-        telegram_id = update.effective_user.id
-        
-        async with async_session() as session:
-            result = await session.execute(
-                select(User).where(User.telegram_id == telegram_id)
-            )
-            user = result.scalar_one_or_none()
-            
-            if not user:
-                await update.message.reply_text(
-                    t('error_generic', lang),
-                    parse_mode='Markdown'
-                )
-                return
-            
-            # Hozirgi tarif
-            has_trial = user.trial_end and user.trial_end > datetime.utcnow()
-            has_subscription = user.subscription_end and user.subscription_end > datetime.utcnow()
-            
-            current_plan = f"🎁 {t('trial', lang)}"
-            if has_subscription:
-                plan_info = SUBSCRIPTION_PLANS.get(user.subscription_plan, SUBSCRIPTION_PLANS['basic'])
-                current_plan = f"{plan_info['emoji']} {plan_info['name']}"
-            
-            text = (
-                f"**{t('subscription_plans_header', lang)}**\n\n"
-                "━━━━━━━━━━━━━━━━━━━━\n\n"
-                f"📌 **{t('current_plan', lang)}:** {current_plan}\n\n"
-                "━━━━━━━━━━━━━━━━━━━━\n\n"
-                f"{t('which_plan', lang)}\n\n"
-            )
-            
-            keyboard = []
-            for plan_key, plan_info in SUBSCRIPTION_PLANS.items():
-                # Kategoriya limiti
-                if plan_info.get('category_limit'):
-                    limit_text = t('plan_categories', lang, limit=f"{plan_info['category_limit']}")
-                else:
-                    limit_text = t('plan_categories', lang, limit=t('unlimited', lang))
-                
-                text += (
-                    f"{plan_info['emoji']} **{plan_info['name']}**\n"
-                    f"   {t('plan_price', lang, price=plan_info['price'])}\n"
-                    f"   {limit_text}\n"
-                    f"   {t('plan_duration', lang, days=plan_info['duration_days'])}\n\n"
-                )
-                keyboard.append([
-                    InlineKeyboardButton(
-                        f"{plan_info['emoji']} {plan_info['name']} — {plan_info['price']:,}",
-                        callback_data=f"select_plan_{plan_key}"
-                    )
-                ])
-            
-            text += "━━━━━━━━━━━━━━━━━━━━\n\n"
-            
-            # "Tarifni tanlang" tugmasi
-            if lang == 'uz':
-                text += "👇 Tarifni tanlang:"
-            elif lang == 'uz_cyrl':
-                text += "👇 Тарифни танланг:"
-            elif lang == 'ru':
-                text += "👇 Выберите тариф:"
-            else:  # en
-                text += "👇 Choose a plan:"
-            
-            await update.message.reply_text(
-                text,
-                reply_markup=InlineKeyboardMarkup(keyboard),
-                parse_mode='Markdown'
-            )
+        # Tariflar ro'yxatini ko'rsatish (payment_handlers dan)
+        from bot.payment_handlers import show_plans
+        await show_plans(update, context)
         return
     
     # Admin tugmalari (ko'p tillilik bilan)

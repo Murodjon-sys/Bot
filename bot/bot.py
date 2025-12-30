@@ -32,6 +32,7 @@ class NewsBot:
             languages_command, add_language_command, remove_language_command
         )
         from bot.language_handler import language_command, language_callback
+        from bot.payment_handlers import show_plans, buy_plan_callback, check_payment_callback
         
         # Oddiy buyruqlar
         self.app.add_handler(CommandHandler("start", start_command))
@@ -67,6 +68,8 @@ class NewsBot:
         self.app.add_handler(CallbackQueryHandler(language_callback, pattern="^(set_lang_|first_lang_)"))
         self.app.add_handler(CallbackQueryHandler(delete_user_callback, pattern="^(delete_user_|confirm_delete_|cancel_delete_)"))
         self.app.add_handler(CallbackQueryHandler(start_trial_callback, pattern="^start_trial$"))
+        self.app.add_handler(CallbackQueryHandler(buy_plan_callback, pattern="^buy_"))
+        self.app.add_handler(CallbackQueryHandler(check_payment_callback, pattern="^check_payment_"))
         self.app.add_handler(CallbackQueryHandler(interest_callback))
         
         # Reply keyboard tugmalari uchun handler

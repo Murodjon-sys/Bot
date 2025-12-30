@@ -1,6 +1,3 @@
-# Environment variables
-.env
-
 # Database
 *.db
 *.sqlite
@@ -16,9 +13,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
 build/
 dist/
 *.egg-info/
